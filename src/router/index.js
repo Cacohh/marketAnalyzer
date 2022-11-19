@@ -15,9 +15,25 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "login" */ '../views/Login.vue'),
     meta: {
-      hideNavbar: true,
+      hideHeader: true,
       hideFooter: true,
      }
+  },
+  {
+    path: '/cadastrar',
+    name: 'Cadastrar',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "login" */ '../views/Cadastrar.vue')
+  },
+  {
+    path: '/home',
+    name: 'Home',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "login" */ '../views/Home.vue')
   }
 ]
 
