@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">Projeto Integrador - GRUPO 16</a>
+      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">Projeto Integrador</a>
       <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
         data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -97,15 +97,8 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1,001</td>
-                  <td>random</td>
-                  <td>data</td>
-                  <td>placeholder</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>1,001</td>
+                <tr v-for="categoria in categorias" :key="categoria.id">
+                  <td>{{ categoria.tipo }}</td>
                   <td>random</td>
                   <td>data</td>
                   <td>placeholder</td>
@@ -126,7 +119,7 @@ export default {
   name: 'Home',
   data() {
         return {
-            tipo: "",
+            categorias: null,
             produto: "",
             preco: "",
             quantidade: null,
@@ -138,9 +131,21 @@ export default {
     singout() {
       this.$router.push({ path: '/index' })
     },
-    getCategorias() {
-      
+    async getCategorias() {
+      const req = await fetch("http://localhost:3000/categorias");
+      const categorias = await req.json();
+
+      this.categorias = categorias
+      //console.log(data)
+      /*
+      for (const categoria of data) {
+        console.log(categoria)
+      } */
+
     }
+  },
+  mounted() {
+    this.getCategorias()
   }
 }
 </script>
