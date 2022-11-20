@@ -1,17 +1,18 @@
 <template>
     <div class="text-center">
         <main class="form-signin w-100 m-auto">
-            <form action="" @submit="logar($event)">
-                <img class="mb-4" src="store-png.png" alt=""
-                    width="72" height="70">
+            <form @submit.prevent="logar($event)">
+                <img class="mb-4" src="store-png.png" alt="" width="72" height="70">
                 <h1 class="h3 mb-3 fw-normal">Login</h1>
 
                 <div class="form-floating">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <input type="email" class="form-control" id="floatingInput" v-model="email"
+                        placeholder="name@example.com">
                     <label for="floatingInput">Endereço de E-mail</label>
                 </div>
                 <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                    <input type="password" class="form-control" id="floatingPassword" v-model="password"
+                        placeholder="Password">
                     <label for="floatingPassword">Senha</label>
                 </div>
                 <div class="checkbox mb-3">
@@ -34,16 +35,23 @@
 <script>
 export default {
     name: 'Login',
+    data() {
+        return {
+            email: "",
+            password: ""
+        }
+    },
     methods: {
         logar(e) {
-            e.preventDefault();
-            console.log("Funfou!");
+            const email = this.email;
+            const password = this.password;
+            this.$router.push({ path: '/home'})
         }
     }
 
 }
 </script>
-
+   
 <style scoped>
 html,
 body {
