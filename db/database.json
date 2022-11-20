@@ -1,90 +1,98 @@
 {
-    "categorias": [
-        {
-            "id": 1,
-            "tipo": "Legumes"
-        },
-        {
-            "id": 2,
-            "tipo": "Frutas"
-        },
-        {
-            "id": 3,
-            "tipo": "Temperos"
-        },
-        {
-            "id": 4,
-            "tipo": "Frios"
-        },
-        {
-            "id": 5,
-            "tipo": "Congelados"
-        },
-        {
-            "id": 6,
-            "tipo": "Bebidas"
-        },
-        {
-            "id": 7,
-            "tipo": "Padaria"
-        },
-        {
-            "id": 8,
-            "tipo": "Limpeza"
-        },        {
-            "id": 9,
-            "tipo": "Higiene"
-        },
-        {
-            "id": 10,
-            "tipo": "Carnes"
-        },
-        {
-            "id": 11,
-            "tipo": "Outros"
-        }
-    ],
-    "produtos": [
-        {
-            "id": 1,
-            "tipo": "Legumes",
-            "produto": "brocolis",
-            "preco": 15.00
-        },
-        {
-            "id": 2,
-            "tipo": "3 Queijos"
-        },
-        {
-            "id": 3,
-            "tipo": "Parmesão e Orégano"
-        },
-        {
-            "id": 4,
-            "tipo": "Integral"
-        }
-    ],
-    "usuarios": [
-        {
-            "id": 1,
-            "email": "caiosouza@hotmail.com",
-            "nome": "Caio",
-            "sobrenome": "Souza",
-            "senha": "hash"
-        },
-        {
-            "id": 2,
-            "email": "alexmotta@hotmail.com",
-            "nome": "Alex",
-            "sobrenome": "Motta",
-            "senha": "hash"
-        },
-        {
-            "id": 3,
-            "email": "fulano@hotmail.com",
-            "nome": "Fulano",
-            "sobrenome": "Sicrano",
-            "senha": "hash"
-        }
-    ]
+  "categorias": [
+    {
+      "id": 1,
+      "tipo": "Legumes"
+    },
+    {
+      "id": 2,
+      "tipo": "Frutas"
+    },
+    {
+      "id": 3,
+      "tipo": "Temperos"
+    },
+    {
+      "id": 4,
+      "tipo": "Frios"
+    },
+    {
+      "id": 5,
+      "tipo": "Congelados"
+    },
+    {
+      "id": 6,
+      "tipo": "Bebidas"
+    },
+    {
+      "id": 7,
+      "tipo": "Padaria"
+    },
+    {
+      "id": 8,
+      "tipo": "Limpeza"
+    },
+    {
+      "id": 9,
+      "tipo": "Higiene"
+    },
+    {
+      "id": 10,
+      "tipo": "Carnes"
+    },
+    {
+      "id": 11,
+      "tipo": "Outros"
+    }
+  ],
+  "produtos": [
+    {
+      "id": 1,
+      "tipo": "Legumes",
+      "produto": "brocolis",
+      "preco": 15
+    },
+    {
+      "id": 2,
+      "tipo": "3 Queijos"
+    },
+    {
+      "id": 3,
+      "tipo": "Parmesão e Orégano"
+    },
+    {
+      "id": 4,
+      "tipo": "Integral"
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "email": "caiosouza@hotmail.com",
+      "nome": "Caio",
+      "sobrenome": "Souza",
+      "senha": "Senac@115"
+    },
+    {
+      "id": 2,
+      "email": "alexmotta@hotmail.com",
+      "nome": "Alex",
+      "sobrenome": "Motta",
+      "senha": "Senac@115"
+    },
+    {
+      "id": 3,
+      "email": "fulano@hotmail.com",
+      "nome": "Fulano",
+      "sobrenome": "Sicrano",
+      "senha": "Senac@115"
+    },
+    {
+      "email": "pedro.prata@gmail.com",
+      "nome": "pedro",
+      "sobrenome": "prata",
+      "senha": "Senac@404",
+      "id": 4
+    }
+  ]
 }

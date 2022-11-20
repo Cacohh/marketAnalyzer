@@ -1,9 +1,13 @@
 <template>
     <div class="text-center">
         <main class="form-signin w-100 m-auto">
-            <form @submit.prevent="logar($event)">
+            <form @submit.prevent="logar()">
                 <img class="mb-4" src="store-png.png" alt="" width="72" height="70">
                 <h1 class="h3 mb-3 fw-normal">Login</h1>
+
+                <div v-if="status" class="alert alert-danger" role="alert">
+                    E-mail ou senha incorretos! Tente novamente por favor.
+                </div>
 
                 <div class="form-floating">
                     <input type="email" class="form-control" id="floatingInput" v-model="email"
@@ -11,7 +15,7 @@
                     <label for="floatingInput">Endereço de E-mail</label>
                 </div>
                 <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingPassword" v-model="password"
+                    <input type="password" class="form-control" id="floatingPassword" v-model="senha"
                         placeholder="Password">
                     <label for="floatingPassword">Senha</label>
                 </div>
@@ -38,17 +42,25 @@ export default {
     data() {
         return {
             email: "",
-            password: ""
+            senha: "",
+            status: false
         }
     },
     methods: {
-        logar(e) {
+        async logar() {
             const email = this.email;
-            const password = this.password;
-            this.$router.push({ path: '/home'})
+            const senha = this.senha;
+            const req = await fetch("http://localhost:3000/usuarios");
+            const data = await req.json();
+            for (const usuario of data) {
+                if (email == usuario.email && senha == usuario.senha) {
+                    this.$router.push({ path: '/home' })
+                }
+            }
+
+            this.status = true
         }
     }
-
 }
 </script>
    
