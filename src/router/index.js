@@ -39,6 +39,32 @@ const routes = [
       hideNavbar: true,
       hideFooter: true
     }
+  },
+  {
+    path: '/produtos',
+    name: 'Produtos',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "login" */ '../views/Produtos.vue'),
+    meta: {
+      hideHeader: true,
+      hideNavbar: true,
+      hideFooter: true
+    }
+  },
+  {
+    path: '/cadastrarProduto',
+    name: 'CadastrarProduto',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "login" */ '../views/CadastrarProduto.vue'),
+    meta: {
+      hideHeader: true,
+      hideNavbar: true,
+      hideFooter: true
+    }
   }
 ]
 
