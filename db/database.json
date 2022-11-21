@@ -47,21 +47,9 @@
   ],
   "produtos": [
     {
-      "id": 1,
-      "tipo": "Legumes",
-      "produto": "brocolis",
-      "preco": 15
-    },
-    {
       "id": 2,
       "tipo": "Legumes",
       "produto": "alface",
-      "preco": 15
-    },
-    {
-      "id": 3,
-      "tipo": "Legumes",
-      "produto": "rucula",
       "preco": 15
     },
     {
@@ -105,13 +93,13 @@
       "tipo": "Temperos",
       "produto": "banana",
       "preco": 18
-    },    
+    },
     {
       "id": 11,
       "tipo": "Temperos",
       "produto": "banana",
       "preco": 18
-    },    
+    },
     {
       "id": 12,
       "tipo": "Frutas",
@@ -311,12 +299,6 @@
       "preco": 18
     },
     {
-      "id": 45,
-      "tipo": "Carnes",
-      "produto": "banana",
-      "preco": 18
-    },
-    {
       "id": 46,
       "tipo": "Outros",
       "produto": "banana",
@@ -345,18 +327,6 @@
       "tipo": "Outros",
       "produto": "banana",
       "preco": 28
-    },
-    {
-      "id": 51,
-      "tipo": "Outros",
-      "produto": "banana",
-      "preco": 32
-    },
-    {
-      "id": 52,
-      "tipo": "Outros",
-      "produto": "banana",
-      "preco": 20
     }
   ],
   "usuarios": [

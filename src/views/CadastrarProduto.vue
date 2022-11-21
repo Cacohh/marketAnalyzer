@@ -85,9 +85,9 @@
                             </div>
 
                             <div class="col-12">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Open this select menu</option>
-                                    <option value="" v-for="categoria in categorias" :key="categoria.id">{{ categoria.tipo }}</option>
+                                <select class="form-select" aria-label="Default select example" v-model="tipo">
+                                    <option selected>Selecione a categoria</option>
+                                    <option :value="categoria.tipo" v-for="categoria in categorias" :key="categoria.id">{{ categoria.tipo }}</option>
                                 </select>
                             </div>
                             <div class="col-12">
@@ -108,19 +108,19 @@ export default {
     data() {
         return {
             produto: "",
-            tipo: "",
+            tipo: null,
             preco: null,
             categorias: null
         }
     },
     methods: {
         async cadastrarProduto() {
-
+            
             const data = {
                 produto: this.produto,
                 tipo: this.tipo,
-                preco: this.preco
-            }
+                preco: this.preco,
+            };
 
             const dataJson = JSON.stringify(data);
 
@@ -129,6 +129,10 @@ export default {
                 headers: { "Content-Type": "application/json" },
                 body: dataJson
             });
+
+            const res = await req.json();
+            console.log(res)
+            
         },
         async getCategorias() {
             const reqCategorias = await fetch("http://localhost:3000/categorias");

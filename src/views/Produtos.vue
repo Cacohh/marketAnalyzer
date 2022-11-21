@@ -87,16 +87,16 @@
                   <tr>
                     <th scope="col">Nome</th>
                     <th scope="col">Preço</th>
-                    <th scope="col">#</th>
                     <th scope="col">Categoria</th>
+                    <th scope="col"></th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr v-for="produto in produtos" :key="produto.id">
                     <td>{{ produto.produto }}</td>
                     <td>R$ {{ produto.preco }}</td>
-                    <td>#</td>
                     <td>{{ produto.tipo }}</td>
+                    <td><button type="button" class="btn btn-danger" @click="deletarProduto(produto.id)">Deletar</button></td>
                     <td></td>
                   </tr>
                 </tbody>
@@ -121,6 +121,16 @@
     methods: {
       singout() {
         this.$router.push({ path: '/' })
+      },
+      async deletarProduto(id) {
+
+        const req = await fetch(`http://localhost:3000/produtos/${id}`, {
+          method: "DELETE"
+        });
+        const res = await req.json();
+
+        this.getCategorias();
+
       },
       cadastrarProduto() {
         this.$router.push({ path: '/cadastrarProduto' })
