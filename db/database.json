@@ -53,16 +53,40 @@
       "preco": 15
     },
     {
-      "id": 2,
-      "tipo": "3 Queijos"
+      "id": 1,
+      "tipo": "Legumes",
+      "produto": "alface",
+      "preco": 15
     },
     {
-      "id": 3,
-      "tipo": "Parmesão e Orégano"
+      "id": 1,
+      "tipo": "Legumes",
+      "produto": "rucula",
+      "preco": 15
     },
     {
-      "id": 4,
-      "tipo": "Integral"
+      "id": 1,
+      "tipo": "Frutas",
+      "produto": "brocolis",
+      "preco": 15
+    },
+    {
+      "id": 1,
+      "tipo": "Frutas",
+      "produto": "alface",
+      "preco": 10
+    },
+    {
+      "id": 1,
+      "tipo": "Frutas",
+      "produto": "rucula",
+      "preco": 18
+    },
+    {
+      "id": 1,
+      "tipo": "Frutas",
+      "produto": "banana",
+      "preco": 18
     }
   ],
   "usuarios": [
@@ -93,6 +117,13 @@
       "sobrenome": "prata",
       "senha": "Senac@404",
       "id": 4
+    },
+    {
+      "email": "diego@icloud.com",
+      "nome": "diego",
+      "sobrenome": "silva",
+      "senha": "Senac@502",
+      "id": 5
     }
   ]
 }

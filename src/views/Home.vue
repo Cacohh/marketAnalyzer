@@ -99,9 +99,9 @@
               <tbody>
                 <tr v-for="categoria in categorias" :key="categoria.id">
                   <td>{{ categoria.tipo }}</td>
-                  <td>random</td>
-                  <td>data</td>
-                  <td>placeholder</td>
+                  <td>{{ categoria.qtde }}</td>
+                  <td>R${{ categoria.media }}</td>
+                  <td>R${{ categoria.total }}</td>
                   <td></td>
                 </tr>
               </tbody>
@@ -118,29 +118,40 @@
 export default {
   name: 'Home',
   data() {
-        return {
-            categorias: null,
-            produto: "",
-            preco: "",
-            quantidade: null,
-            soma: null,
-            media: null
-        }
-    },
+    return {
+      categorias: null,
+      produto: "",
+      preco: "",
+      quantidade: null,
+      soma: null,
+      media: null
+    }
+  },
   methods: {
     singout() {
-      this.$router.push({ path: '/index' })
+      this.$router.push({ path: '/' })
     },
     async getCategorias() {
-      const req = await fetch("http://localhost:3000/categorias");
-      const categorias = await req.json();
+      const reqCategorias = await fetch("http://localhost:3000/categorias");
+      const reqProdutos = await fetch("http://localhost:3000/produtos");
+      const dataCategorias = await reqCategorias.json();
+      const dataProdutos = await reqProdutos.json();
+      let categorias = [];
 
+      for (let cate of dataCategorias) {
+        let total = null;
+        let qtde = null;
+        for (let produto of dataProdutos) {
+          if (produto.tipo == cate.tipo) {
+            total += produto.preco;
+            qtde++
+          }
+        }
+        const media = total / qtde;
+        const categoriasProdutos = { "tipo": cate.tipo, "total": total, "qtde": qtde, "media": media};
+        categorias.push(categoriasProdutos)
+      }
       this.categorias = categorias
-      //console.log(data)
-      /*
-      for (const categoria of data) {
-        console.log(categoria)
-      } */
 
     }
   },
