@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "backend": "json-server --host 192.168.32.131 --watch db/database.json"
+    "backend": "json-server --host 192.168.254.51 --watch db/database.json"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.6",
