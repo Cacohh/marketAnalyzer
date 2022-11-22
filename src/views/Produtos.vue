@@ -124,7 +124,7 @@
       },
       async deletarProduto(id) {
 
-        const req = await fetch(`http://localhost:3000/produtos/${id}`, {
+        const req = await fetch(`http://144.217.133.81:3000/produtos/${id}`, {
           method: "DELETE"
         });
         const res = await req.json();
@@ -136,7 +136,7 @@
         this.$router.push({ path: '/cadastrarProduto' })
       },
       async getCategorias() {
-        const reqProdutos = await fetch("http://localhost:3000/produtos");
+        const reqProdutos = await fetch("http://144.217.133.81:3000/produtos");
         const dataProdutos = await reqProdutos.json();
         this.produtos = dataProdutos
   

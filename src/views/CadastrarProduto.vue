@@ -124,7 +124,7 @@ export default {
 
             const dataJson = JSON.stringify(data);
 
-            const req = await fetch("http://localhost:3000/produtos", {
+            const req = await fetch("http://144.217.133.81:3000/produtos", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: dataJson
@@ -135,7 +135,7 @@ export default {
             
         },
         async getCategorias() {
-            const reqCategorias = await fetch("http://localhost:3000/categorias");
+            const reqCategorias = await fetch("http://144.217.133.81:3000/categorias");
             const datacategorias = await reqCategorias.json();
             this.categorias = datacategorias
 

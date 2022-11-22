@@ -50,7 +50,7 @@ export default {
         async logar() {
             const email = this.email;
             const senha = this.senha;
-            const req = await fetch("http://localhost:3000/usuarios");
+            const req = await fetch("http://144.217.133.81:3000/usuarios");
             const data = await req.json();
             for (const usuario of data) {
                 if (email == usuario.email && senha == usuario.senha) {
