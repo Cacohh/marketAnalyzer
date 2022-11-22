@@ -132,8 +132,8 @@ export default {
       this.$router.push({ path: '/' })
     },
     async getCategorias() {
-      const reqCategorias = await fetch("http://cloudlab.kluh.com.br:3000/categorias");
-      const reqProdutos = await fetch("http://cloudlab.kluh.com.br:3000/produtos");
+      const reqCategorias = await fetch("http://144.217.133.81:3000/categorias");
+      const reqProdutos = await fetch("http://144.217.133.81:3000/produtos");
       const dataCategorias = await reqCategorias.json();
       const dataProdutos = await reqProdutos.json();
       let categorias = [];
